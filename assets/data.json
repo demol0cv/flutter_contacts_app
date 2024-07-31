@@ -1,0 +1,46 @@
+{
+  "contacts" : [
+    {
+      "id": 1,
+      "name": "Liam Browning",
+      "phone": "+79953332233",
+      "avatar": "avatar.png"
+    },
+    {
+      "id": 2,
+      "name": "Umar Collier",
+      "phone": "+79953332233",
+      "avatar": "avatar.png"
+    },
+    {
+      "id": 3,
+      "name": "Muhammad Odling",
+      "phone": "+79953332233",
+      "avatar": "avatar.png"
+    },
+    {
+      "id": 4,
+      "name": "Arron Gonzales",
+      "phone": "+79953332233",
+      "avatar": "avatar.png"
+    },
+    {
+      "id": 5,
+      "name": "Pearl Mcclure",
+      "phone": "+79953332233",
+      "avatar": "avatar.png"
+    },
+    {
+      "id": 6,
+      "name": "Bradley Hall",
+      "phone": "+79953332233",
+      "avatar": "avatar.png"
+    },
+    {
+      "id": 7,
+      "name": "Saffron Greene",
+      "phone": "+79953332233",
+      "avatar": "avatar.png"
+    }
+  ]
+}
