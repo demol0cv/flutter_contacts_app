@@ -1,4 +1,4 @@
-# my_todo_app
+# my_contacts_app
 
 A new Flutter project.
 

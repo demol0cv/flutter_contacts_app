@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_todo_app/contact.dart';
+import 'package:my_todo_app/repositories/models/contact.dart';
 
 class ContactListItem extends StatelessWidget {
   const ContactListItem({

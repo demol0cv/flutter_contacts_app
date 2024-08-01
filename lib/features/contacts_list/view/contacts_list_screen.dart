@@ -3,7 +3,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:my_todo_app/contact.dart';
+import 'package:my_todo_app/repositories/contacts_list/contacts_list_repository.dart';
+import 'package:my_todo_app/repositories/models/contact.dart';
 import 'package:my_todo_app/features/contacts_list/widgets/widgets.dart';
 
 class AllContactsScreen extends StatefulWidget {
@@ -16,19 +17,18 @@ class AllContactsScreen extends StatefulWidget {
 }
 
 class _AllContactsScreenState extends State<AllContactsScreen> {
-  List _contacts = [];
+  List<Contact>? _contacts;
 
-  Future<void> loadContacts() async {
-    final String response = await rootBundle.loadString('assets/data.json');
-    final dynamic data = await json.decode(response);
+  @override
+  void initState() {
+    _loadContacts();
+    super.initState();
+  }
 
-    setState(() {
-      _contacts = [];
-      for (int i = 0; i < data["contacts"].length - 1; i++) {
-        _contacts.add(data["contacts"][i]);
-        log(_contacts[i].toString());
-      }
-    });
+  Future<void> _loadContacts() async {
+    _contacts = await ContactsRepository().getContactsList();
+
+    setState(() {});
   }
 
   @override
@@ -39,24 +39,24 @@ class _AllContactsScreenState extends State<AllContactsScreen> {
         title: Text(widget.title),
         actions: <Widget>[
           IconButton(
-            onPressed: () {
-              loadContacts();
-            },
-            icon: const Icon(Icons.data_exploration),
-          )
+              onPressed: () {
+                ContactsRepository().getContactsList();
+              },
+              icon: const Icon(Icons.data_array))
         ],
       ),
       body: Column(
         children: [
-          const Text('Contacts'),
           Expanded(
-            child: ListView.builder(
-              itemCount: _contacts.length,
-              itemBuilder: (context, i) {
-                final contactData = Contact.fromMap(_contacts[i]);
-                return ContactListItem(contactData: contactData);
-              },
-            ),
+            child: (_contacts == null)
+                ? const Center(child: CircularProgressIndicator())
+                : ListView.builder(
+                    itemCount: _contacts?.length,
+                    itemBuilder: (context, i) {
+                      final contactData = _contacts![i];
+                      return ContactListItem(contactData: contactData);
+                    },
+                  ),
           ),
         ],
       ),
