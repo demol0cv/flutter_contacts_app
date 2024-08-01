@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:my_todo_app/repositories/models/contact.dart';
+import 'package:my_todo_app/repositories/repositories.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
