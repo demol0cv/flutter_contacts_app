@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_todo_app/repositories/abstract_contacts_repository.dart';
 import 'package:my_todo_app/repositories/models/contact.dart';
