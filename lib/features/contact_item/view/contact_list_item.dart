@@ -40,6 +40,7 @@ class _ContactScreenState extends State<ContactScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(contact?.name ?? '...'),
+        actions: [],
       ),
       body: Column(
         children: [
@@ -47,6 +48,12 @@ class _ContactScreenState extends State<ContactScreen> {
           Text(contact?.phone ?? 'Unknown phone')
         ],
       ),
+      floatingActionButton: IconButton(
+          onPressed: () => {
+                Navigator.of(context)
+                    .pushNamed('/editcontact', arguments: contact)
+              },
+          icon: Icon(Icons.edit)),
     );
   }
 }
