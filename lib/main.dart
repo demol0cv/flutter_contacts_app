@@ -5,11 +5,12 @@ import 'package:my_todo_app/contacts_app.dart';
 import 'package:my_todo_app/repositories/contacts_list/contacts_list_repository.dart';
 import 'package:my_todo_app/repositories/models/models.dart';
 
+const contactsBoxName = 'contacts_box';
+
 void main() async {
   Hive.registerAdapter(ContactAdapter());
   await Hive.initFlutter();
 
-  const contactsBoxName = 'contacts_box';
   final contactsBox = await Hive.openBox<Contact>(contactsBoxName);
 
   GetIt.I.registerLazySingleton(
