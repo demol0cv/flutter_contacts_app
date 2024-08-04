@@ -32,7 +32,6 @@ class _ContactScreenState extends State<ContactScreen> {
       log('ошибка при присвоении: $e');
     }
     super.didChangeDependencies();
-    // TODO: implement didChangeDependencies
   }
 
   @override
@@ -53,7 +52,7 @@ class _ContactScreenState extends State<ContactScreen> {
                 Navigator.of(context)
                     .pushNamed('/editcontact', arguments: contact)
               },
-          icon: Icon(Icons.edit)),
+          icon: const Icon(Icons.edit)),
     );
   }
 }
