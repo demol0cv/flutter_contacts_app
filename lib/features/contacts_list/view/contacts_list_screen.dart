@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_todo_app/repositories/contacts_list/contacts_list_repository.dart';
@@ -34,6 +36,11 @@ class _AllContactsScreenState extends State<AllContactsScreen> {
       appBar: AppBar(
         //backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        actions: [
+          IconButton(
+              onPressed: () => {log("Hello world")},
+              icon: const Icon(Icons.details_sharp))
+        ],
       ),
       body: Column(
         children: [
